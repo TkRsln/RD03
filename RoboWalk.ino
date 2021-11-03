@@ -4,16 +4,18 @@
 // 11 // 10
 
 
-Leg loa;
-Leg loo;
-Leg laa;
-Leg lao;
+Leg loa; //Leg Front Right
+Leg loo; //Leg Front Left
+Leg laa; //Leg Back Right
+Leg lao; //Leg Back Left
 //Servo omz;
 
 void setup() {
   
   Serial.begin(9600);
   delay(500);
+  
+  ////Blinking & Starting Delay
   pinMode(13,OUTPUT);
   for(int i=0;i<5;i++){
     digitalWrite(13,LOW);
@@ -26,20 +28,22 @@ void setup() {
     Serial.println("Starting");
     delay(500);
     
-  //int ust_pin,int alt_pin,float ust_def,float ust_max,float ust_min,float ust_duz,float alt_def,float alt_min,float alt_max
+  ////Initialling Legs
+  
   int omz=0;
   lao.setReady(3,2,4,17,145,30,90,114,20,115,100);    //4
-  lao.alt_reverse=true;
+  // .setReady(int upperServo_pin,int lowerServo_pin,float upperIdle_angle,float upperMax_angle,float upperMin_angle,float upperIdle_angle,float lowerIdle_angle,float lowerMin_angle,float lowerMax_angle)
+  lao.alt_reverse=true;   //Reversing angles of Lower Servo for Back Left Leg
   laa.setReady(6,7,5,10,135,22,80,119,20,125,98);    //5
-  laa.ust_reverse=true;
-  laa.omuz_reverse=true;
+  laa.ust_reverse=true;   //Reversing angles of Upper Servo for Back Right Leg
+  laa.omuz_reverse=true;  //Reversing angles of Shoulder Servo for Back Right Leg
 
   //loo.setReady(11,12,13,30,171,51,110,50,37,123,85);
   loo.setReady(11,12,13,35,171,51,110,50,32,123,85); //13
-  loo.alt_reverse=true;
+  loo.alt_reverse=true;   //Reversing angles of Lower Servo for Front Left Leg
   loa.setReady(8,9,10,23,165,45,110,104,32,120,106);   //10
-  loa.ust_reverse=true;
-  loa.omuz_reverse=true;
+  loa.ust_reverse=true;   //Reversing angles of upper Servo for Front Right Leg
+  loa.omuz_reverse=true;  //Reversing angles of Shoulder Servo for Front Right Leg
   //omz.attach(13);
   //omz.write(90);
 
@@ -50,11 +54,14 @@ void setup() {
    
 
   //setDef();
-  sitReady();
-  getUp();
-  delay(3500);
+  sitReady(); // Set angles for sitting
+  getUp();    // start to standing up
+  delay(3500);// wait for it
   
-  walkTest2();
+  walkTest2();// try to walk..
+  /*
+    Just it, others functions are exist for tests.
+  */
   
   //loa.setLegXY(0,-0.5,12);
   //laa.setLegXY(0,-0.5,12);
