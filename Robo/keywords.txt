@@ -1,0 +1,30 @@
+#######################################
+# Syntax Coloring Map Leg
+#######################################
+
+#######################################
+# Datatypes (KEYWORD1)
+#######################################
+
+Leg	KEYWORD1	Leg
+
+#######################################
+# Methods and Functions (KEYWORD2)
+#######################################
+setDef	KEYWORD2
+setUp	KEYWORD2
+setDown	KEYWORD2
+setDuz	KEYWORD2
+setReady	KEYWORD2
+writeUst	KEYWORD2
+writeAlt	KEYWORD2
+setLegXY	KEYWORD2
+setLegX	KEYWORD2
+setLegDis	KEYWORD2
+writeOmuz	KEYWORD2
+
+#######################################
+# Constants (LITERAL1)
+#######################################
+state_sit	LITERAL1
+state_stand	LITERAL1
