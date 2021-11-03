@@ -24,34 +24,34 @@ float dis_values[12]={
 
 Leg::Leg(int ust_pin,int alt_pin,int omz_pin,float ust_def,float ust_max,float ust_min,float ust_duz,float alt_def,float alt_min,float alt_max){
 	Leg::ust_def=ust_def;
-      Leg::ust_max=ust_max;//Max "upper leg servo" angle to be
-      Leg::ust_duz=ust_duz;//Idle "upper leg servo" angle to be
-      Leg::ust_min=ust_min;//Min "upper leg servo" angle to be
-      Leg::alt_max=alt_max;//Same things for "lower leg servo"
-      Leg::alt_min=alt_min;
-      Leg::alt_def=alt_def;
+      	Leg::ust_max=ust_max;//Max "upper leg servo" angle to be
+      	Leg::ust_duz=ust_duz;//Idle "upper leg servo" angle to be
+      	Leg::ust_min=ust_min;//Min "upper leg servo" angle to be
+      	Leg::alt_max=alt_max;//Same things for "lower leg servo"
+      	Leg::alt_min=alt_min;
+      	Leg::alt_def=alt_def;
       
-      Leg::ust.attach(ust_pin);//upper leg servo pin
-      Leg::alt.attach(alt_pin);//lower leg servo pin
-	  Leg::omuz.attach(omz_pin);//shoulder leg servo pin
+      	Leg::ust.attach(ust_pin);//upper leg servo pin
+      	Leg::alt.attach(alt_pin);//lower leg servo pin
+	Leg::omuz.attach(omz_pin);//shoulder leg servo pin
 }
 Leg::Leg(){}
 void Leg::setReady(int ust_pin,int alt_pin,int omz_pin,float ust_def,float ust_max,float ust_min,float ust_duz,float alt_def,float alt_min,float alt_max,float omuz_def){
 	//if you invoke class with default constractor, you can use this method for assign values
 	Leg::ust_def=ust_def;
-      Leg::ust_max=ust_max;
-      Leg::ust_duz=ust_duz;
-      Leg::ust_min=ust_min;
-      Leg::alt_max=alt_max;
-      Leg::alt_min=alt_min;
-      Leg::alt_def=alt_def;
-	  Leg::omuz_def=omuz_def;
+      	Leg::ust_max=ust_max;
+      	Leg::ust_duz=ust_duz;
+      	Leg::ust_min=ust_min;
+      	Leg::alt_max=alt_max;
+      	Leg::alt_min=alt_min;
+      	Leg::alt_def=alt_def;
+	Leg::omuz_def=omuz_def;
       
-      Leg::ust.attach(ust_pin);
-      Leg::alt.attach(alt_pin);
-	  Leg::omuz.attach(omz_pin);
+      	Leg::ust.attach(ust_pin);
+      	Leg::alt.attach(alt_pin);
+	Leg::omuz.attach(omz_pin);
 	  
-	  Leg::writeOmuz(0);
+	Leg::writeOmuz(0);
 	  
 }
 
@@ -142,16 +142,16 @@ void Leg::write(int ust,int alt){
 //sets default angle
 void Leg::setDef(){
 	Leg::writeNUst(Leg::ust_def);
-    Leg::writeNAlt(Leg::alt_def);
+    	Leg::writeNAlt(Leg::alt_def);
 	Leg::writeNOmuz(Leg::omuz_def);
 }
 //for max distance from ground
 void Leg::setUp(){
 	Leg::writeNUst(Leg::ust_max);
-    Leg::writeNAlt(Leg::alt_max);
+    	Leg::writeNAlt(Leg::alt_max);
 }
 //for idle distance from ground
 void Leg::setDuz(){
 	Leg::writeNUst(Leg::ust_duz);
-    Leg::writeNAlt(Leg::alt_def);
+    	Leg::writeNAlt(Leg::alt_def);
 }
