@@ -106,7 +106,7 @@ void Leg::setReady(int ust_pin,int alt_pin){
       Leg::ust.attach(ust_pin);
       Leg::alt.attach(alt_pin);
 }
-//reverses lower servo angle for leg (since left leg works opposite way than right, you can see 180-angle if reverse is true)
+//reverses lower servo angle for leg (function has reverse method(180-angle) since left leg works opposite way than right, you can see 180-angle if reverse is true)
 void Leg::writeNAlt(int angle){
 	Leg::alt.write(alt_reverse?180-angle:angle);
 	Leg::alt_current=angle;
@@ -122,11 +122,11 @@ void Leg::writeAlt(int angle){
 void Leg::writeUst(int angle){
 	writeNUst(angle+ust_min);
 }
-//shoulder functions (since left leg works opposite way than right)
+//shoulder functions (function has reverse method(180-angle) since left leg works opposite way than right)
 void Leg::writeOmuz(int angle){
 	Leg::writeNOmuz(angle+Leg::omuz_def);
 }
-//shoulder functions (since left leg works opposite way than right)
+//shoulder functions (function has reverse method(180-angle) since left leg works opposite way than right)
 void Leg::writeNOmuz(int angle){
 	Leg::omuz.write(omuz_reverse?180-angle:angle);
 	Leg::omuz_current=angle;
