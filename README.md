@@ -1,4 +1,4 @@
 # RoboDog
-quadruped robot - Version 2
+quadruped robot - Version 3
 
-Codes inside of ".ino" file are messy, i tried many function for make it walk more efficient.
+https://www.reddit.com/r/arduino/comments/qlu2v2/thats_my_boi/
